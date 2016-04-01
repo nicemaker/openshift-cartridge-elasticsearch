@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+source $HOME/elasticsearch/lib/util
+
+update_elasticsearch

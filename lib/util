@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+export ES_PID_FILE="${OPENSHIFT_ELASTICSEARCH_DIR}/run/elasticsearch.pid"
+
+function update_elasticsearch{
+
+	local LATEST = 2.3.0
+
+	local URL = https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${LATEST}/elasticsearch-${LATEST}.tar.gz
+
+
+	if ! curl -L -o ${OPENSHIFT_ELASTICSEARCH_DIR}/tmp/latest.tgz $NODE_URL; then
+      return 1
+    fi
+
+    rm -rf ${OPENSHIFT_ELASTICSEARCH_DIR}.run
+
+    mkdir ${OPENSHIFT_ELASTICSEARCH_DIR}.run
+
+    tar -xvzf ${OPENSHIFT_ELASTICSEARCH_DIR}latest.tgz --strip-components=1 -C ${OPENSHIFT_ELASTICSEARCH_DIR}.run
+
+    rm ${OPENSHIFT_ELASTICSEARCH_DIR}latest.tgz
+
+    echo "Elasticsearch updated."
+
+}

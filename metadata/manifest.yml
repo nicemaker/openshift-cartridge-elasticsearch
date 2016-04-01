@@ -6,7 +6,7 @@ Description: Elasticsearch is a distributed, open source search and analytics en
 Version: '2.3'
 Versions:
 - '2.3'
-Cartridge-Version: 0.1.0
+Cartridge-Version: 0.1.1
 Cartridge-Vendor: nicemaker
 License: ASL 2.0
 Vendor: elastic
