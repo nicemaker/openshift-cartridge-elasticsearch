@@ -7,7 +7,6 @@ Version: '2.3'
 Versions:
 - '2.3'
 Cartridge-Version: 0.1.0
-Compatible-Versions:
 Cartridge-Vendor: nicemaker
 License: ASL 2.0
 Vendor: elastic
