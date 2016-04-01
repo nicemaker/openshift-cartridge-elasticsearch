@@ -1,0 +1,43 @@
+---
+Name: mongodb
+Cartridge-Short-Name: MONGODB
+Display-Name: Elasticsearch 2.3
+Description: Elasticsearch is a distributed, open source search and analytics engine, designed for horizontal scalability, reliability, and easy management. It combines the speed of search with the power of analytics via a sophisticated, developer-friendly query language covering structured, unstructured, and time-series data.
+Version: '2.3'
+Versions:
+- '2.3'
+Cartridge-Version: 0.1.0
+Compatible-Versions:
+Cartridge-Vendor: nicemaker
+License: ASL 2.0
+Vendor: elastic
+Categories:
+- service
+- database
+- nosql
+- embedded
+Website: https://www.elastic.co
+Provides:
+- elasticsearch-2.3.0
+- elasticsearch-2.3
+- elasticsearch
+Publishes:
+  publish-unicast-host:
+    Type: NET_TCP:elasticsearch-cluster-info
+  publish-nosql-db-connection-info:
+    Type: ENV:NET_TCP:nosqldb:connection-info
+  publish-gear-endpoint:
+    Type: NET_TCP:gear-endpoint-info
+Scaling:
+  Min: 1
+  Max: -1
+Endpoints:
+- Private-IP-Name: DB_HOST
+  Private-Port-Name: DB_PORT
+  Private-Port: 9200
+
+
+- Private-IP-Name:   IP
+  Private-Port-Name: TRANSPORT_PORT
+  Private-Port:      9300
+  Public-Port-Name:  TRANSPORT_PROXY_PORT

@@ -1,0 +1,43 @@
+#!/bin/bash -e
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+
+
+function start() {
+ 
+}
+
+function stop() {
+  
+}
+
+function restart() {
+  stop
+  start
+}
+
+function status() {
+  client_result "DB is Running"
+}
+
+function deploy() {
+  
+}
+
+function tidy() {
+
+}
+
+function update() {
+
+}
+
+case "$1" in
+  start)             start ;;
+  stop)              stop ;;
+  restart | reload ) restart $1 ;;
+  status)            status ;;
+  deploy)            deploy ;;
+  *)                 exit 0
+esac
