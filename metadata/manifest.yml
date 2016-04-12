@@ -29,7 +29,7 @@ Publishes:
     Type: NET_TCP:gear-endpoint-info
 Scaling:
   Min: 1
-  Max: -1
+  Max: 1
 Endpoints:
 - Private-IP-Name: ELASTICSEARCH_IP
   Private-Port-Name: ELASTICSEARCH_PORT
