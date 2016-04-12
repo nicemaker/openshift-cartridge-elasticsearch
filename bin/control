@@ -21,14 +21,14 @@ function start() {
     return 0
   fi
 
-  oo-erb ${OPENSHIFT_ELASTICSEARCH_DIR}conf/elasticsearch.yml.erb > ${OPENSHIFT_ELASTICSEARCH_DIR}conf/elasticsearch.yml
-  oo-erb ${OPENSHIFT_ELASTICSEARCH_DIR}conf/logging.yml.erb > ${OPENSHIFT_ELASTICSEARCH_DIR}conf/logging.yml
+  #oo-erb ${OPENSHIFT_ELASTICSEARCH_DIR}conf/elasticsearch.yml.erb > ${OPENSHIFT_ELASTICSEARCH_DIR}conf/elasticsearch.yml
+  #oo-erb ${OPENSHIFT_ELASTICSEARCH_DIR}conf/logging.yml.erb > ${OPENSHIFT_ELASTICSEARCH_DIR}conf/logging.yml
 
   
   echo "Starting ElasticSearch"
 
   
-  ${OPENSHIFT_ELASTICSEARCH_DIR}runtime/bin/elasticsearch -d  -p $ES_PID_FILE --path.conf=${OPENSHIFT_ELASTICSEARCH_DIR}conf
+  ${OPENSHIFT_ELASTICSEARCH_DIR}runtime/bin/elasticsearch -d  -p $ES_PID_FILE # --path.conf=${OPENSHIFT_ELASTICSEARCH_DIR}conf
 }
 
 
