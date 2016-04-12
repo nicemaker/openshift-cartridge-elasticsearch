@@ -1,6 +1,6 @@
 ---
-Name: mongodb
-Cartridge-Short-Name: MONGODB
+Name: elasticsearch
+Cartridge-Short-Name: ELASTICSEARCH
 Display-Name: Elasticsearch 2.3
 Description: Elasticsearch is a distributed, open source search and analytics engine, designed for horizontal scalability, reliability, and easy management. It combines the speed of search with the power of analytics via a sophisticated, developer-friendly query language covering structured, unstructured, and time-series data.
 Version: '2.3'
