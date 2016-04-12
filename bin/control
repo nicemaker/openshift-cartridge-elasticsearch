@@ -28,7 +28,7 @@ function start() {
   echo "Starting ElasticSearch"
 
   
-  ${OPENSHIFT_ELASTICSEARCH_DIR}runtime/bin/elasticsearch -d  -p $ES_PID_FILE # --path.conf=${OPENSHIFT_ELASTICSEARCH_DIR}conf
+  ${OPENSHIFT_ELASTICSEARCH_DIR}runtime/bin/elasticsearch -d  -p $ES_PID_FILE  --path.conf=${OPENSHIFT_ELASTICSEARCH_DIR}conf
 }
 
 
