@@ -1,6 +1,23 @@
 #!/bin/bash
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
-source $HOME/elasticsearch/lib/util
 
-update_elasticsearch
+VERSION="2.3.0"
+
+URL="https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/$VERSION/elasticsearch-$VERSION.tar.gz"
+
+mkdir -p ${OPENSHIFT_ELASTICSEARCH_DIR}tmp
+
+if ! curl -L -o ${OPENSHIFT_ELASTICSEARCH_DIR}tmp/elasticsearch.tgz $URL; then
+    return 1
+  fi
+
+mkdir -p ${OPENSHIFT_ELASTICSEARCH_DIR}runtime
+
+tar -xvzf ${OPENSHIFT_ELASTICSEARCH_DIR}tmp/elasticsearch.tgz --strip-components=1 -C ${OPENSHIFT_ELASTICSEARCH_DIR}runtime
+
+rm ${OPENSHIFT_ELASTICSEARCH_DIR}tmp/elasticsearch.tgz
+
+echo "Elasticsearch $VERSION downloaded."
+
+

@@ -31,12 +31,12 @@ Scaling:
   Min: 1
   Max: -1
 Endpoints:
-- Private-IP-Name: DB_HOST
-  Private-Port-Name: DB_PORT
+- Private-IP-Name: ELASTICSEARCH_IP
+  Private-Port-Name: ELASTICSEARCH_PORT
   Private-Port: 9200
 
 
-- Private-IP-Name:   IP
-  Private-Port-Name: TRANSPORT_PORT
+- Private-IP-Name:   ELASTICSEARCH_TRANSPORT_IP
+  Private-Port-Name: ELASTICSEARCH_TRANSPORT_PORT
   Private-Port:      9300
-  Public-Port-Name:  TRANSPORT_PROXY_PORT
+  Public-Port-Name:  ELASTICSEARCH_TRANSPORT_PROXY_PORT
